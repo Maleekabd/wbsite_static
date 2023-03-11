@@ -1,8 +1,9 @@
 import Layout from "@/Layout/Layout";
 import React from "react";
+import Image from "next/image";
 const About = () => {
   return (
-    <Layout>
+    <>
       <div className="container flex justify-center mx-auto pt-16">
         <div>
           <p className="text-gray-500 text-lg text-center font-normal pb-3">BUILDING TEAM</p>
@@ -16,7 +17,7 @@ const About = () => {
               <div className="rounded overflow-hidden shadow-md bg-white">
                 <div className="absolute -mt-20 w-full flex justify-center">
                   <div className="h-32 w-32">
-                    <img src="https://cdn.tuk.dev/assets/photo-1564061170517-d3907caa96ea.jfif" alt className="rounded-full object-cover h-full w-full shadow-md" />
+                    <Image src="https://cdn.tuk.dev/assets/photo-1564061170517-d3907caa96ea.jfif" alt className="rounded-full object-cover h-full w-full shadow-md" width={50} height={50} />
                   </div>
                 </div>
                 <div className="px-6 mt-16">
@@ -55,7 +56,7 @@ const About = () => {
               <div className="rounded overflow-hidden shadow-md bg-white">
                 <div className="absolute -mt-20 w-full flex justify-center">
                   <div className="h-32 w-32">
-                    <img src="https://cdn.tuk.dev/assets/photo-1530577197743-7adf14294584.jfif" alt className="rounded-full object-cover h-full w-full shadow-md" />
+                    <Image src="https://cdn.tuk.dev/assets/photo-1530577197743-7adf14294584.jfif" alt className="rounded-full object-cover h-full w-full shadow-md" width={50} height={50} />
                   </div>
                 </div>
                 <div className="px-6 mt-16">
@@ -94,7 +95,7 @@ const About = () => {
               <div className="rounded overflow-hidden shadow-md bg-white">
                 <div className="absolute -mt-20 w-full flex justify-center">
                   <div className="h-32 w-32">
-                    <img src="https://cdn.tuk.dev/assets/photo-1566753323558-f4e0952af115.jfif" alt className="rounded-full object-cover h-full w-full shadow-md" />
+                    <Image src="https://cdn.tuk.dev/assets/photo-1566753323558-f4e0952af115.jfif" alt className="rounded-full object-cover h-full w-full shadow-md" width={50} height={50} />
                   </div>
                 </div>
                 <div className="px-6 mt-16">
@@ -133,7 +134,7 @@ const About = () => {
               <div className="rounded overflow-hidden shadow-md bg-white">
                 <div className="absolute -mt-20 w-full flex justify-center">
                   <div className="h-32 w-32">
-                    <img src="https://cdn.tuk.dev/assets/boy-smiling_23-2148155640.jpg" alt className="rounded-full object-cover h-full w-full shadow-md" />
+                    <Image src="https://cdn.tuk.dev/assets/boy-smiling_23-2148155640.jpg" alt className="rounded-full object-cover h-full w-full shadow-md" width={50} height={50} />
                   </div>
                 </div>
                 <div className="px-6 mt-16">
@@ -172,7 +173,7 @@ const About = () => {
               <div className="rounded overflow-hidden shadow-md bg-white">
                 <div className="absolute -mt-20 w-full flex justify-center">
                   <div className="h-32 w-32">
-                    <img src="https://cdn.tuk.dev/assets/blond-man-happy-expression_1194-2873.jpg" alt className="rounded-full object-cover h-full w-full shadow-md" />
+                    <Image src="https://cdn.tuk.dev/assets/blond-man-happy-expression_1194-2873.jpg" alt className="rounded-full object-cover h-full w-full shadow-md" width={50} height={50} />
                   </div>
                 </div>
                 <div className="px-6 mt-16">
@@ -211,7 +212,7 @@ const About = () => {
               <div className="rounded overflow-hidden shadow-md bg-white">
                 <div className="absolute -mt-20 w-full flex justify-center">
                   <div className="h-32 w-32">
-                    <img src="https://cdn.tuk.dev/assets/photo-1570211776045-af3a51026f4a.jfif" alt className="rounded-full object-cover h-full w-full shadow-md" />
+                    <Image src="https://cdn.tuk.dev/assets/photo-1570211776045-af3a51026f4a.jfif" alt className="rounded-full object-cover h-full w-full shadow-md" width={50} height={50} />
                   </div>
                 </div>
                 <div className="px-6 mt-16">
@@ -249,7 +250,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }
 

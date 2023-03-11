@@ -2,30 +2,20 @@ import ArtikelTerbaru from '@/components/ArtikelTerbaru'
 import Layout from '@/Layout/Layout'
 import React from 'react'
 import PyStyle from "../../styles/python.module.css"
+import { data } from '@/data'
+import { Artikel } from '@/components/Blog'
+import List_Content from '@/components/List_Content'
+import Breadcrumb from '@/components/Breadcrumb'
+import Image from 'next/image'
 
 const Python = () => {
   return (
-    <Layout>
+    <Layout pageTitle={"Python"}>
       <div className='container mx-auto '>
         <div className='flex flex-wrap pt-5'>
           <div className='className=" w-full md:w-2/3 p-10 bg-white rounded-xl shadow-md'>
-            <nav className="flex " aria-label="Breadcrumb">
-              <ol className="inline-flex items-center space-x-1 md:space-x-3">
-                <li className="inline-flex items-center">
-                  <a href="/" className="inline-flex items-center text-sm font-medium hover:text-emerald-400 text-black dark:hover:text-emerald-400">
-                    <svg aria-hidden="true" className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
-                    Home
-                  </a>
-                </li>
-                <li aria-current="page">
-                  <div className="flex items-center">
-                    <svg aria-hidden="true" className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
-                    <span className="ml-1 text-sm font-medium text-black md:ml-2 dark:text-black">Python</span>
-                  </div>
-                </li>
-              </ol>
-            </nav>
             <h1 className='font-bold text-3xl p-5 pl-0'>Python</h1>
+            <Image src={`https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`}  width={1000}  alt={`python`} height={400}/>
             <p className={PyStyle.fontsize}>
               Python adalah bahasa pemrograman tingkat tinggi, interpretatif, dan dinamis yang dirancang agar mudah dipelajari dan mudah dibaca. Python pertama kali diterbitkan oleh Guido van Rossum pada tahun 1991 dan sejak itu menjadi salah satu bahasa pemrograman terpopuler di dunia.
             </p>
@@ -37,7 +27,7 @@ const Python = () => {
 
             <ol>
               <li>
-                <h1  className={PyStyle.subtitle}>
+                <h1 className={PyStyle.subtitle}>
                   Mudah untuk dipelajari:
                 </h1>
                 <p className={PyStyle.fontsize}>
@@ -46,7 +36,7 @@ const Python = () => {
                 <br />
               </li>
               <li>
-                <h1  className={PyStyle.subtitle}>
+                <h1 className={PyStyle.subtitle}>
                   Multi-Platform:
                 </h1>
                 <p className={PyStyle.fontsize}>
@@ -55,7 +45,7 @@ const Python = () => {
                 <br />
               </li>
               <li>
-                <h1  className={PyStyle.subtitle}>
+                <h1 className={PyStyle.subtitle}>
                   Interpretatif:
                 </h1>
                 <p className={PyStyle.fontsize}>
@@ -64,7 +54,7 @@ const Python = () => {
                 <br />
               </li>
               <li>
-                <h1  className={PyStyle.subtitle}>
+                <h1 className={PyStyle.subtitle}>
                   Dinamis:
                 </h1>
                 <p className={PyStyle.fontsize}>
@@ -73,7 +63,7 @@ const Python = () => {
                 <br />
               </li>
               <li>
-                <h1  className={PyStyle.subtitle}>
+                <h1 className={PyStyle.subtitle}>
                   Object-Oriented:
                 </h1>
                 <p className={PyStyle.fontsize}>
@@ -82,7 +72,7 @@ const Python = () => {
                 <br />
               </li>
               <li>
-                <h1  className={PyStyle.subtitle}>
+                <h1 className={PyStyle.subtitle}>
                   Mendukung berbagai paradigma pemrograman:
                 </h1>
                 <p className={PyStyle.fontsize}>
@@ -91,7 +81,7 @@ const Python = () => {
                 <br />
               </li>
               <li>
-                <h1  className={PyStyle.subtitle}>
+                <h1 className={PyStyle.subtitle}>
                   Beberapa modul dan pustaka:
                 </h1>
                 <p className={PyStyle.fontsize}>
@@ -100,7 +90,7 @@ const Python = () => {
                 <br />
               </li>
               <li>
-                <h1  className={PyStyle.subtitle}>
+                <h1 className={PyStyle.subtitle}>
                   Komunitas yang kuat:
                 </h1>
                 <p className={PyStyle.fontsize}>
@@ -111,11 +101,11 @@ const Python = () => {
             </ol>
 
             <ul>
-              <h1  className={PyStyle.subtitle}>
+              <h1 className={PyStyle.subtitle}>
                 Beberapa contoh aplikasi Python yang populer adalah:
               </h1>
               <li>
-                <h1  className={PyStyle.subtitle}>
+                <h1 className={PyStyle.subtitle}>
                   Django
                 </h1>
                 <p className={PyStyle.fontsize}>
@@ -124,7 +114,7 @@ const Python = () => {
                 <br />
               </li>
               <li>
-                <h1  className={PyStyle.subtitle}>
+                <h1 className={PyStyle.subtitle}>
                   NumPy
                 </h1>
                 <p className={PyStyle.fontsize}>
@@ -155,7 +145,21 @@ const Python = () => {
               Python adalah bahasa pemrograman yang populer dan banyak digunakan oleh developer di seluruh dunia. Berkat kelebihannya, Python menjadi pilihan yang tepat untuk mengembangkan berbagai aplikasi dan proyek.
             </p>
           </div>
-          <ArtikelTerbaru />
+          <div className='w-full md:w-1/3 p-5 pt-0'>
+            <div className='rounded-xl shadow-md p-5 mt-2 bg-white'>
+              <h1 className='font-bold text-xl'>List Content</h1>
+              {/* {data.map(p => (
+                <List_Content {...p} />
+              ))} */}
+            </div>
+            <div className='rounded-xl shadow-md p-5 bg-white mt-2'>
+              <h1 className='font-bold text-xl'>Artikel Terbaru</h1>
+              {/* <div>{DataArtikel.map(p => (
+                <ArtikelTerbaru {...p} />
+              ))}
+              </div> */}
+            </div>
+          </div>
         </div>
       </div>
     </Layout>

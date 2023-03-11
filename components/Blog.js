@@ -1,84 +1,121 @@
-// /*
-//   This example requires some changes to your config:
+// import Link from "next/link"
+// import Image from "next/image"
+// import { useState, useEffect } from "react"
+// import axios from "axios"
 
-//   ```
-//   // tailwind.config.js
-//   module.exports = {
-//     // ...
-//     plugins: [
-//       // ...
-//       require('@tailwindcss/line-clamp'),
-//     ],
-//   }
-//   ```
-// */
-// const posts = [
+// export const Artikel = [
 //   {
-//     id: 1,
-//     title: 'Boost your conversion rate',
-//     href: '#',
-//     description:
-//       'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-//     date: 'Mar 16, 2020',
-//     datetime: '2020-03-16',
-//     category: { title: 'Marketing', href: '#' },
-//     author: {
-//       name: 'Michael Foster',
-//       role: 'Co-Founder / CTO',
-//       href: '#',
-//       imageUrl:
-//         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-//     },
+//     image: "https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+//     name: "Malik",
+//     date: "19 nov 2023",
+//     title: "Classic Cryptography",
+//     subtitle: "Kriptografi adalah studi tentang teknik untuk mengamankan komunikasi dan data sehingga hanya mereka yang memiliki kunci keamanan yang benar yang dapat membaca dan memahaminya",
+//     slug: "cryptography",
+//     tag:
+//       [
+//         {
+//           id: 1,
+//           kategori: "computer science",
+//         },
+//         {
+//           id: 2,
+//           kategori: "programming"
+//         }
+//       ]
 //   },
-//   // More posts...
+//   {
+//     image: "https://investorplace.com/wp-content/uploads/2020/08/quantum-computing.jpg",
+//     name: "Amsar",
+//     date: "14 nov 2023",
+//     title: "Kuantum",
+//     subtitle: "Kriptografi adalah studi tentang teknik untuk mengamankan komunikasi dan data sehingga hanya mereka yang memiliki kunci keamanan yang benar yang dapat membaca dan memahaminya",
+//     tag:
+//       [
+//         {
+//           id: 1,
+//           kategori: "computer science",
+//         },
+//         {
+//           id: 2,
+//           kategori: "programming"
+//         }
+//       ]
+//   },
+//   {
+//     image: "https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+//     name: "Malik",
+//     date: "19 nov 2023",
+//     title: "Classic Cryptography",
+//     subtitle: "Kriptografi adalah studi tentang teknik untuk mengamankan komunikasi dan data sehingga hanya mereka yang memiliki kunci keamanan yang benar yang dapat membaca dan memahaminya",
+//     tag:
+//       [
+//         {
+//           id: 1,
+//           kategori: "computer science",
+//         },
+//         {
+//           id: 2,
+//           kategori: "programming"
+//         }
+//       ]
+//   },
+//   {
+//     image: "https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+//     name: "Malik",
+//     date: "19 nov 2023",
+//     title: "Classic Cryptography",
+//     subtitle: "Kriptografi adalah studi tentang teknik untuk mengamankan komunikasi dan data sehingga hanya mereka yang memiliki kunci keamanan yang benar yang dapat membaca dan memahaminya",
+//     tag:
+//       [
+//         {
+//           id: 1,
+//           kategori: "computer science",
+//         },
+//         {
+//           id: 2,
+//           kategori: "programming"
+//         }
+//       ]
+//   },
+//   {
+//     image: "https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+//     name: "Malik",
+//     date: "19 nov 2023",
+//     title: "Classic Cryptography",
+//     subtitle: "Kriptografi adalah studi tentang teknik untuk mengamankan komunikasi dan data sehingga hanya mereka yang memiliki kunci keamanan yang benar yang dapat membaca dan memahaminya",
+//     tag:
+//       [
+//         {
+//           id: 1,
+//           kategori: "computer science",
+//         },
+//         {
+//           id: 2,
+//           kategori: "programming"
+//         }
+//       ]
+//   },
 // ]
 
 // export default function Example() {
 //   return (
-//     <div className="bg-white py-24 sm:py-32">
-//       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-//         <div className="mx-auto max-w-2xl lg:mx-0">
-//           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">From the blog</h2>
-//           <p className="mt-2 text-lg leading-8 text-gray-600">
-//             Learn how to grow your business with our expert advice.
-//           </p>
-//         </div>
-//         <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-//           {posts.map((post) => (
-//             <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
-//               <div className="flex items-center gap-x-4 text-xs">
-//                 <time dateTime={post.datetime} className="text-gray-500">
-//                   {post.date}
-//                 </time>
-//                 <a
-//                   href={post.category.href}
-//                   className="relative z-10 rounded-full bg-gray-50 py-1.5 px-3 font-medium text-gray-600 hover:bg-gray-100"
-//                 >
-//                   {post.category.title}
-//                 </a>
-//               </div>
-//               <div className="group relative">
-//                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-//                   <a href={post.href}>
-//                     <span className="absolute inset-0" />
-//                     {post.title}
-//                   </a>
-//                 </h3>
-//                 <p className="mt-5 text-sm leading-6 text-gray-600 line-clamp-3">{post.description}</p>
-//               </div>
-//               <div className="relative mt-8 flex items-center gap-x-4">
-//                 <img src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
-//                 <div className="text-sm leading-6">
-//                   <p className="font-semibold text-gray-900">
-//                     <a href={post.author.href}>
-//                       <span className="absolute inset-0" />
-//                       {post.author.name}
-//                     </a>
-//                   </p>
-//                   <p className="text-gray-600">{post.author.role}</p>
-//                 </div>
-//               </div>
-//             </article>
+//     <div className="">
+//       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+//         <h2 className="sr-only">Products</h2>
+//         <h1 className=" text-6xl pb-5 text-center">Latest News</h1>
+//         <div className="grid p-2 grid-cols-1 gap-y-5 gap-x-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
+//           {Artikel.map(a => (
+//             <Link href={``} key={a.id} className="bg-slate-400 rounded-lg shadow-md">
+//               <Image
+//                 src={a.image}
+//                 className="aspect-video w-full object-cover rounded-md"
+//                 alt="" width={100} height={100} />
+//               <div className="p-4">
+//                 <p className="mb-1 text-sm text-primary-500">{a.name} • <time>{a.date}</time></p>
+//                 <h3 className="text-xl font-medium text-gray-900">{a.title}</h3>
+//                 <p className="mt-1 text-gray-500">{a.subtitle}</p>
+
+//               </div></Link>
 //           ))}
 //         </div>
 //       </div>
@@ -86,112 +123,93 @@
 //   )
 // }
 
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
-const products = [
-  {
-    id: 1,
-    name: 'Earthen Bottle',
-    href: '#',
-    price: '$48',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg',
-    imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-  },
-  {
-    id: 2,
-    name: 'Nomad Tumbler',
-    href: '#',
-    price: '$35',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
-    imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
-  },
-  {
-    id: 3,
-    name: 'Focus Paper Refill',
-    href: '#',
-    price: '$89',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg',
-    imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
-  },
-  {
-    id: 4,
-    name: 'Machined Mechanical Pencil',
-    href: '#',
-    price: '$35',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
-    imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
-  },
-  {
-    id: 5,
-    name: 'Earthen Bottle',
-    href: '#',
-    price: '$48',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg',
-    imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-  },
-  {
-    id: 6,
-    name: 'Nomad Tumbler',
-    href: '#',
-    price: '$35',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-02.jpg',
-    imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
-  },
-  {
-    id: 7,
-    name: 'Focus Paper Refill',
-    href: '#',
-    price: '$89',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-03.jpg',
-    imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
-  },
-  {
-    id: 8,
-    name: 'Machined Mechanical Pencil',
-    href: '#',
-    price: '$35',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-03-image-card-04.jpg',
-    imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
-  },
 
-]
+import React from "react";
+import Image from "next/image";
 
-export default function Example() {
+function Example() {
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="sr-only">Products</h2>
-        <h1 className="text-2xl p-5  pb-0 text-center">Blog</h1>
-        <h1 className="text-xl p-5 pt-0  text-center font-light">What's New ?</h1>
-        <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {products.map((product) => (
-            <a key={product.id} href={product.href} className="group">
-              <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
-                <img
-                  src={product.imageSrc}
-                  alt={product.imageAlt}
-                  className="h-full w-full object-cover object-center group-hover:opacity-75"
-                />
+    <>
+      <div id="blog" className="bg-gray-100 px-4 xl:px-0 py-12">
+        <div className="mx-auto container">
+          <h1 className="text-center text-3xl lg:text-5xl tracking-wider text-gray-900">Latest from our Blog</h1>
+          <div className="mt-12 lg:mt-24">
+            <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+              <div>
+                <Image className="w-full" src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(1).png" alt="computer" width={50} height={50} />
+                <div className="py-4 px-8 w-full flex justify-between bg-indigo-700">
+                  <p className="text-sm text-white font-semibold tracking-wide">Bruce Wayne</p>
+                  <p className="text-sm text-white font-semibold tracking-wide">13TH Oct, 2020</p>
+                </div>
+                <div className="bg-white px-10 py-6 rounded-bl-3xl rounded-br-3xl">
+                  <h1 className="text-4xl text-gray-900 font-semibold tracking-wider">Transactions</h1>
+                  <p className="text-gray-700 text-base lg:text-lg  lg:leading-8 tracking-wide mt-6 w-11/12">Find the latest events updates or create events, concerts, conferences, workshops, exhibitions, and cultural events in all cities of the US. The aim of Eventistan is to promote healthy and entertaining event.Find the latest events updates or create events, concerts, conferences, workshops, exhibitions, and cultural events in all cities of the US. The aim of Eventistan is to promote healthy and entertaining event.</p>
+                  <div className="w-full mt-4 justify-end flex items-center cursor-pointer">
+                    <p className="text-base tracking-wide text-indigo-500">Read more</p>
+                    <svg className="ml-3 lg:ml-6" xmlns="http://www.w3.org/2000/svg" width={20} height={18} viewBox="0 0 20 18" fill="none">
+                      <path d="M11.7998 1L18.9998 8.53662L11.7998 16.0732" stroke="#4338ca" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M1 8.53662H19" stroke="#4338ca" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="h-5 w-2" />
+                </div>
               </div>
-              <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
-              <p className="mt-1 text-lg font-medium text-gray-900">{product.price}</p>
-            </a>
-          ))}
+              <div>
+                <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+                  <div>
+                    <Image className="w-full" src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(2).png" alt="games" height={50} width={50} />
+                    <div className="py-2 px-4 w-full flex justify-between bg-indigo-700">
+                      <p className="text-sm text-white font-semibold tracking-wide">Bruce Wayne</p>
+                      <p className="text-sm text-white font-semibold tracking-wide">13TH Oct, 2020</p>
+                    </div>
+                    <div className="bg-white px-3  lg:px-6 py-4 rounded-bl-3xl rounded-br-3xl">
+                      <h1 className="text-lg text-gray-900 font-semibold tracking-wider">Transactions</h1>
+                      <p className="text-gray-700 text-sm  lg:text-base  lg:leading-8 pr-4 tracking-wide mt-2">Find the latest events updates or create events, concerts, conferences, workshops...</p>
+                    </div>
+                  </div>
+                  <div>
+                    <Image className="w-full" src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(3).png" alt="notes" height={50} width={50} />
+                    <div className="py-2 px-4 w-full flex justify-between bg-indigo-700">
+                      <p className="text-sm text-white font-semibold tracking-wide">Bruce Wayne</p>
+                      <p className="text-sm text-white font-semibold tracking-wide">13TH Oct, 2020</p>
+                    </div>
+                    <div className="bg-white px-3  lg:px-6 py-4 rounded-bl-3xl rounded-br-3xl">
+                      <h1 className="text-lg text-gray-900 font-semibold tracking-wider">Transactions</h1>
+                      <p className="text-gray-700 text-sm  lg:text-base  lg:leading-8 pr-4 tracking-wide mt-2">Find the latest events updates or create events, concerts, conferences, workshops...</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-10 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+                  <div>
+                    <Image className="w-full" src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(4).png" alt="laptop" width={50} height={50} />
+                    <div className="py-2 px-4 w-full flex justify-between bg-indigo-700">
+                      <p className="text-sm text-white font-semibold tracking-wide">Bruce Wayne</p>
+                      <p className="text-sm text-white font-semibold tracking-wide">13TH Oct, 2020</p>
+                    </div>
+                    <div className="bg-white px-3  lg:px-6 py-4 rounded-bl-3xl rounded-br-3xl">
+                      <h1 className="text-lg text-gray-900 font-semibold tracking-wider">Transactions</h1>
+                      <p className="text-gray-700 text-sm  lg:text-base  lg:leading-8 pr-4 tracking-wide mt-2">Find the latest events updates or create events, concerts, conferences, workshops...</p>
+                    </div>
+                  </div>
+                  <div>
+                    <Image className="w-full" src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(5).png" alt="worker" width={50} height={50} />
+                    <div className="py-2 px-4 w-full flex justify-between bg-indigo-700">
+                      <p className="text-sm text-white font-semibold tracking-wide">Bruce Wayne</p>
+                      <p className="text-sm text-white font-semibold tracking-wide">13TH Oct, 2020</p>
+                    </div>
+                    <div className="bg-white px-3  lg:px-6 py-4 rounded-bl-3xl rounded-br-3xl">
+                      <h1 className="text-lg text-gray-900 font-semibold tracking-wider">Transactions</h1>
+                      <p className="text-gray-700 text-sm  lg:text-base  lg:leading-8 pr-4 tracking-wide mt-2">Find the latest events updates or create events, concerts, conferences, workshops...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }
 
+export default Example;
