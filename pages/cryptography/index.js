@@ -88,7 +88,7 @@ export default Cryptography
 
 export const getServerSideProps = async () => {
 
-  const data = await fetch("http://localhost:3000/api/cryptographyapi/")
+  const data = await fetch("/api/cryptographyapi/")
   const response = await data.json();
 
   return {
