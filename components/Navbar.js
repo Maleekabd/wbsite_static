@@ -48,27 +48,27 @@ const Navbar = () => {
                 </svg>
               </button>
               <ul className={`flex text-3xl md:text-base items-center py-10 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0 bg-white md:bg-transparent z-20 ${!session && status === "loading" ? `${NavbarCSS.loading}` : `${NavbarCSS.loaded}`}`}>
-                <li className="text-gray-700 hover:text-emerald-400 hover:font-semibold cursor-pointer text-base lg:text-lg pt-10 md:pt-0">
+                <li className="text-gray-700 hover:text-emerald-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0">
                   <Link legacyBehavior href={`/python`}>
                     <a className={(Path === "/python" ? "text-emerald-400" : "")}>Python</a>
                   </Link>
                 </li>
-                <li className="text-gray-700 hover:text-emerald-400 hover:font-semibold cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                <li className="text-gray-700 hover:text-emerald-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                   <Link legacyBehavior href={`/cryptography`}>
                     <a className={(Path === "/cryptography" ? "text-emerald-400" : "")}>Cryptography</a>
                   </Link>
                 </li>
-                <li className="text-gray-700 hover:text-emerald-400  cursor-pointer hover:font-semibold text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                <li className="text-gray-700 hover:text-emerald-400  cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                   <Link legacyBehavior href={`/javascript`}>
                     <a className={(Path === "/javascript" ? "text-emerald-400" : "")}>Javascript</a>
                   </Link>
                 </li>
-                <li className=" text-gray-700 hover:text-emerald-400 hover:font-semibold cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                <li className=" text-gray-700 hover:text-emerald-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                   <Link legacyBehavior href={`/quantum-computing`}>
                     <a className={(Path === "/quantum-computing" ? "text-emerald-400" : " ")}>Quantum Computing</a>
                   </Link>
                 </li>
-                <li className="pr-5 text-gray-700 hover:text-emerald-400 hover:font-semibold cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
+                <li className="pr-5 text-gray-700 hover:text-emerald-400 cursor-pointer text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10">
                   <Link legacyBehavior href={`/about`}>
                     <a className={(Path === "/about" ? "text-emerald-400" : "")}>About</a>
                   </Link>

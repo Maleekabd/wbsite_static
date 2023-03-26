@@ -3,26 +3,26 @@ import Image from 'next/image'
 import Link from 'next/link'
 import axios from 'axios'
 import slugify from 'slugify'
-
+import { Data } from '@/data'
 const ArtikelTerbaru = () => {
 
-  const [data, setData] = useState([])
-  console.log(data);
-  async function fetchData() {
-    const Response = await axios.get("http://localhost:3000/api/cryptographyapi")
-    setData(Response.data)
-  }
+  // const [data, setData] = useState([])
+  // console.log(data);
+  // async function fetchData() {
+  //   const Response = await axios.get("../data/json")
+  //   setData(Response.data)
+  // }
 
-  useEffect(() => {
-    fetchData()
-  }, [])
+  // useEffect(() => {
+  //   fetchData()
+  // }, [])
 
   return (
     <>
       <div className='rounded-xl shadow-md p-5 bg-white mt-2'>
         <h1 className='font-bold text-xl'>Artikel Terbaru</h1>
         <div>
-          {data.map(p => {
+          {Data.map(p => {
             const Content = slugify(p.content, {
               replacement: "-",
               remove: "/[*+~.()!:@]/g",

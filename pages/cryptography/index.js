@@ -8,10 +8,10 @@ import Simetris from "../../public/assets/simetris.jpg"
 import Asimetris from "../../public/assets/asimetris.jpg"
 import ArtikelTerbaru from "../../components/ArtikelTerbaru"
 import List_Content from '@/components/List_Content'
+import axios from 'axios'
+import { Data } from '@/data'
 
-export const Cryptography = ({ cryptographyapi }) => {
-
-
+export const Cryptography = ({cryptographyapi}) => {
   return (
     <Layout pageTitle={"Cryptography"}>
       <div className="container mx-auto">
@@ -36,7 +36,7 @@ export const Cryptography = ({ cryptographyapi }) => {
               <br />
               <li>
                 <h1 className={Stylecrypto.subtitle}>kriptografi asimetris</h1>
-                <Image src={Asimetris} width={50} height={50} alt=""/>
+                <Image src={Asimetris} width={800} height={50} alt="" />
                 <p className={Stylecrypto.fontsize}>Cryptography asimetris menggunakan dua kunci yang berbeda, yaitu kunci publik dan kunci privat. Kunci publik digunakan untuk mengenkripsi pesan sedangkan kunci privat digunakan untuk mendekripsi pesan. Kunci publik dapat dibagikan dengan siapa saja sedangkan kunci pribadi harus dirahasiakan. Algoritma enkripsi asimetris yang populer adalah RSA dan Elliptic Curve Cryptography (ECC).</p>
               </li>
             </ul>
@@ -57,7 +57,7 @@ export const Cryptography = ({ cryptographyapi }) => {
               </li>
               <li>
                 <h1 className={Stylecrypto.subtitle}>Hashing</h1>
-                <Image src={Hashing} className="p-5" height="300" width="100%" alt=''/>
+                <Image src={Hashing} className="p-5" height="300" width="100%" alt='' />
                 <p className={Stylecrypto.fontsize}>Hashing digunakan untuk mengonversi pesan menjadi nilai hash yang unik dan tetap. Hashing berguna untuk memastikan integritas data. Perubahan kecil pada pesan juga mengubah nilai hash.</p>
               </li>
             </ul>
@@ -70,9 +70,9 @@ export const Cryptography = ({ cryptographyapi }) => {
           <div className='w-full md:w-1/3 p-5 pt-0'>
             <div className='rounded-xl shadow-md p-5 mt-2 bg-white'>
               <h1 className='font-bold text-xl'>List Content</h1>
-              {cryptographyapi.map(p => (
+              {Data.map(p => (
                 <div key={p._id}>
-                <List_Content {...p} />
+                  <List_Content {...p} />
                 </div>
               ))}
             </div>
@@ -88,12 +88,11 @@ export default Cryptography
 
 export const getServerSideProps = async () => {
 
-  const data = await fetch("/api/cryptographyapi/")
-  const response = await data.json();
+  const data = await fetch("http://localhost:3000/api/cryptographyapi/")
 
   return {
     props: {
-      cryptographyapi: response
+      cryptographyapi: await data.json()
     }
   }
 }

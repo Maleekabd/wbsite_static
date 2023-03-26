@@ -3,9 +3,7 @@ import React from 'react'
 import List_Content from '@/components/List_Content'
 import Stylecrypto from "../../styles/cryptography.module.css"
 import ArtikelTerbaru from '@/components/ArtikelTerbaru'
-import { Artikel } from '@/components/Blog'
-import { data } from '@/data'
-import Breadcrumb from '@/components/Breadcrumb'
+import { Data } from '@/data'
 
 export const Javascript = () => {
   return (
@@ -41,21 +39,17 @@ export const Javascript = () => {
               </li>
             </ul>
           </div>
-          {/* <div className='w-full md:w-1/3 p-5 pt-0'>
+          <div className='w-full md:w-1/3 p-5 pt-0'>
             <div className='rounded-xl shadow-md p-5 mt-2 bg-white'>
               <h1 className='font-bold text-xl'>List Content</h1>
-              {data.map(p => (
-                <List_Content {...p} />
+              {Data.map(p => (
+                <div key={p._id}>
+                  <List_Content {...p} />
+                </div>
               ))}
             </div>
-            <div className='rounded-xl shadow-md p-5 bg-white mt-2'>
-              <h1 className='font-bold text-xl'>Artikel Terbaru</h1>
-              <div>{Artikel.map(p => (
-                <ArtikelTerbaru {...p} />
-              ))}
-              </div>
-            </div>
-          </div> */}
+            <ArtikelTerbaru />
+          </div>
         </div>
       </div>
     </Layout >
